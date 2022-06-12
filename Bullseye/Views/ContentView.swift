@@ -48,7 +48,7 @@ struct ContentView: View {
             }) {
                 Text("HIT ME")
             }
-            .alert("Hello There!", isPresented: $isAlertVisible) {
+            .alert("Your Target: \(game.target)!", isPresented: $isAlertVisible) {
                 Button("Awesome") {}
             } message: {
                 let roundedInt: Int = Int(self.sliderValue.rounded())
