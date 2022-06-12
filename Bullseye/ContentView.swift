@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var isAlertVisible: Bool = false
+    @State private var sliderValue: Double = 50.0
     
     var body: some View {
         VStack {
@@ -29,14 +30,13 @@ struct ContentView: View {
                 Text("1")
                     .bold()
                 
-                Slider(value: .constant(50), in: 1.0...100.0)
+                Slider(value: self.$sliderValue, in: 1.0...100.0)
                 
                 Text("100")
                     .bold()
             }
             
             Button(action: {
-                print("Hello SwiftUI")
                 self.isAlertVisible = true
             }) {
                 Text("HIT ME")
@@ -44,7 +44,8 @@ struct ContentView: View {
             .alert("Hello There!", isPresented: $isAlertVisible) {
                 Button("Awesome") {}
             } message: {
-                Text("This is my first pop-up")
+                let roundedInt: Int = Int(self.sliderValue.rounded())
+                Text("The slider's value is \(roundedInt)")
             }
 
 
