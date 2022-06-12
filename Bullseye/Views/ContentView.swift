@@ -46,7 +46,8 @@ struct ContentView: View {
                 Button("Awesome") {}
             } message: {
                 let roundedInt: Int = Int(self.sliderValue.rounded())
-                Text("The slider's value is \(roundedInt)")
+                Text("The slider's value is \(roundedInt)!\n" +
+                     "You scored \(self.game.points(sliderValue: roundedInt)) points this round.")
             }
 
 
