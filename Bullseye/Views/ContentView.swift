@@ -15,12 +15,18 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("🎯🎯🎯\nPUT THE BULLSEYE AS CLOSE AS YOU CAN TO")
+            Text("🎯🎯🎯")
+                .font(.largeTitle)
+                .fontWeight(.black)
+                .padding(.bottom)
+            
+            Text("PUT THE BULLSEYE AS CLOSE AS YOU CAN TO")
                 .bold()
                 .kerning(2)
                 .multilineTextAlignment(.center)
                 .lineSpacing(4.0)
                 .font(.footnote)
+                .padding(.bottom)
 
             Text(String(game.target))
                 .kerning(-1.0)
@@ -49,10 +55,9 @@ struct ContentView: View {
                 Text("The slider's value is \(roundedInt)!\n" +
                      "You scored \(self.game.points(sliderValue: roundedInt)) points this round.")
             }
-
+            .padding(.top)
 
         }
-        
     }
 }
 
