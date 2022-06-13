@@ -27,6 +27,10 @@ struct ButtonView: View {
         })
         .foregroundColor(Color.white)
         .cornerRadius(21)
+        .overlay(
+            RoundedRectangle(cornerRadius: 21)
+                .strokeBorder(Color.white, lineWidth: 2.0)
+        )
         .alert(
             "Your Target: \(game.target)!",
             isPresented: $isAlertVisible,
@@ -42,8 +46,11 @@ struct ButtonView: View {
 
 struct ButtonViewPreviews: PreviewProvider {
     static var previews: some View {
-        ButtonView(isAlertVisible: .constant(true), game: .constant(Game()), sliderValue: .constant(50.0))
+//        ButtonView(isAlertVisible: .constant(true), game: .constant(Game()), sliderValue: .constant(50.0))
         
         ButtonView(isAlertVisible: .constant(false), game: .constant(Game()), sliderValue: .constant(50.0))
+        
+        ButtonView(isAlertVisible: .constant(false), game: .constant(Game()), sliderValue: .constant(50.0))
+            .preferredColorScheme(.dark)
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6D34CF7D28570C0D0015A130 /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D34CF7C28570C0D0015A130 /* TextViews.swift */; };
 		6D34CF81285710F00015A130 /* ControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D34CF80285710F00015A130 /* ControlsView.swift */; };
+		6D34CF8428571AF50015A130 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D34CF8328571AF50015A130 /* TestView.swift */; };
 		6DBB1E6C28563FBF00E14678 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1E6B28563FBF00E14678 /* Game.swift */; };
 		6DBB1E742856631700E14678 /* BullseyeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1E732856631700E14678 /* BullseyeTests.swift */; };
 		6DFEB1082855E8D000952B98 /* BullseyeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFEB1072855E8D000952B98 /* BullseyeApp.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		6D34CF7C28570C0D0015A130 /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
 		6D34CF80285710F00015A130 /* ControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsView.swift; sourceTree = "<group>"; };
+		6D34CF8328571AF50015A130 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		6DBB1E6B28563FBF00E14678 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		6DBB1E712856631700E14678 /* BullseyeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BullseyeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DBB1E732856631700E14678 /* BullseyeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullseyeTests.swift; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D34CF8228571AD50015A130 /* TestViews */ = {
+			isa = PBXGroup;
+			children = (
+				6D34CF8328571AF50015A130 /* TestView.swift */,
+			);
+			path = TestViews;
+			sourceTree = "<group>";
+		};
 		6DBB1E722856631700E14678 /* BullseyeTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,9 +98,10 @@
 			isa = PBXGroup;
 			children = (
 				6DFEB11728563DF200952B98 /* App */,
-				6DFEB11628563DB600952B98 /* Views */,
 				6DFEB11528563DA600952B98 /* Models */,
 				6DFEB10D2855E8D200952B98 /* Preview Content */,
+				6D34CF8228571AD50015A130 /* TestViews */,
+				6DFEB11628563DB600952B98 /* Views */,
 			);
 			path = Bullseye;
 			sourceTree = "<group>";
@@ -238,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D34CF8428571AF50015A130 /* TestView.swift in Sources */,
 				6DFEB10A2855E8D000952B98 /* ContentView.swift in Sources */,
 				6D34CF7D28570C0D0015A130 /* TextViews.swift in Sources */,
 				6DBB1E6C28563FBF00E14678 /* Game.swift in Sources */,
