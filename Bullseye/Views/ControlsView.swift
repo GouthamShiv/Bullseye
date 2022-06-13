@@ -34,11 +34,16 @@ struct ButtonView: View {
         .alert(
             "Your Target: \(game.target)!",
             isPresented: $isAlertVisible,
-            actions: { Button("Awesome") {} },
+            actions: {
+                Button("Awesome!") {
+                    game.startNewRound(points: game.points(sliderValue: Int(sliderValue)))
+                }
+            },
             message: {
-                let roundedInt = Int(sliderValue.rounded())
-                Text("The slider's value is \(roundedInt)!\n" +
-                     "You scored \(game.points(sliderValue: roundedInt)) points this round.")
+                let roundedValue = Int(sliderValue.rounded())
+                let points = game.points(sliderValue: roundedValue)
+                Text("You've hit \(roundedValue)!\n" +
+                     "You scored \(points) points this round.")
             }
         )
     }
