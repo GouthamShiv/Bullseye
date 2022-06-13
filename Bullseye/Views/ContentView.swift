@@ -18,43 +18,9 @@ struct ContentView: View {
             Color("BackgroundColor").edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             VStack {
                 InstructionsView(game: $game)
-                HStack {
-                    Text("1")
-                        .bold()
-                        .foregroundColor(Color("TextColor"))
-                    
-                    Slider(value: $sliderValue, in: 1.0...100.0)
-                    
-                    Text("100")
-                        .bold()
-                        .foregroundColor(Color("TextColor"))
-                }
+                SliderView(sliderValue: $sliderValue)
                 .padding()
-                
-                Button(action: {
-                    isAlertVisible = true
-                }) {
-                    Text("hit me".uppercased())
-                    .bold()
-                    .font(.title3)
-                }
-                .padding(20.0)
-                .background(ZStack {
-                    Color("ButtonColor")
-                    LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
-                })
-                .foregroundColor(Color.white)
-                .cornerRadius(21)
-                .alert(
-                    "Your Target: \(game.target)!",
-                    isPresented: $isAlertVisible,
-                    actions: { Button("Awesome") {} },
-                    message: {
-                        let roundedInt = Int(sliderValue.rounded())
-                        Text("The slider's value is \(roundedInt)!\n" +
-                             "You scored \(game.points(sliderValue: roundedInt)) points this round.")
-                    }
-                )
+                ButtonView(isAlertVisible: $isAlertVisible, game: $game, sliderValue: $sliderValue)
             }
         }
     }
@@ -70,6 +36,18 @@ struct InstructionsView: View {
                 .padding(.trailing, 30.0)
 
             BigNumberText(text: String(game.target))
+        }
+    }
+}
+
+struct SliderView: View {
+    @Binding var sliderValue: Double
+    
+    var body: some View {
+        HStack {
+            SliderLabelView(value: "1")
+            Slider(value: $sliderValue, in: 1.0...100.0)
+            SliderLabelView(value: "100")
         }
     }
 }
