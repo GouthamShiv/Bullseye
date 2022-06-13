@@ -36,7 +36,7 @@ struct ButtonView: View {
             isPresented: $isAlertVisible,
             actions: {
                 Button("Awesome!") {
-                    game.startNewRound(points: game.points(sliderValue: Int(sliderValue)))
+                    game.startNewRound(points: game.points(sliderValue: Int(sliderValue.rounded())))
                 }
             },
             message: {

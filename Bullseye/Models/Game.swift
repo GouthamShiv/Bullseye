@@ -28,8 +28,14 @@ struct Game {
     }
     
     mutating func startNewRound(points: Int) -> Void {
-        self.score += points
+        score += points
         round += 1
+        target = Int.random(in: 1...100)
+    }
+    
+    mutating func restart() -> Void {
+        score = 0
+        round = 1
         target = Int.random(in: 1...100)
     }
 }
