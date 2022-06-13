@@ -29,20 +29,24 @@ struct ContentView: View {
                     .lineSpacing(4.0)
                     .font(.footnote)
                     .padding(.bottom)
+                    .foregroundColor(Color("TextColor"))
 
                 Text(String(game.target))
                     .kerning(-1.0)
                     .fontWeight(.black)
                     .font(.largeTitle)
+                    .foregroundColor(Color("TextColor"))
                 
                 HStack {
                     Text("1")
                         .bold()
+                        .foregroundColor(Color("TextColor"))
                     
                     Slider(value: $sliderValue, in: 1.0...100.0)
                     
                     Text("100")
                         .bold()
+                        .foregroundColor(Color("TextColor"))
                 }
                 .padding()
                 
