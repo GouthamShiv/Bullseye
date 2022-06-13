@@ -20,7 +20,7 @@ struct ContentView: View {
                 .fontWeight(.black)
                 .padding(.bottom)
             
-            Text("PUT THE BULLSEYE AS CLOSE AS YOU CAN TO")
+            Text("Put the bullseye as close as you can to".uppercased())
                 .bold()
                 .kerning(2)
                 .multilineTextAlignment(.center)
@@ -42,12 +42,19 @@ struct ContentView: View {
                 Text("100")
                     .bold()
             }
+            .padding()
             
             Button(action: {
                 isAlertVisible = true
             }) {
-                Text("HIT ME")
+                Text("hit me".uppercased())
+                .bold()
+                .font(.title3)
             }
+            .padding(20.0)
+            .background(Color.blue)
+            .foregroundColor(Color.white)
+            .cornerRadius(21)
             .alert("Your Target: \(game.target)!", isPresented: $isAlertVisible) {
                 Button("Awesome") {}
             } message: {
@@ -55,7 +62,6 @@ struct ContentView: View {
                 Text("The slider's value is \(roundedInt)!\n" +
                      "You scored \(game.points(sliderValue: roundedInt)) points this round.")
             }
-            .padding(.top)
 
         }
     }
