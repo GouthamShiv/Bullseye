@@ -14,7 +14,6 @@ struct InstructionText: View {
             Text("🎯🎯🎯")
                 .font(.largeTitle)
                 .fontWeight(.black)
-            .padding(.bottom)
             
             Text(text.uppercased())
                 .bold()
@@ -22,7 +21,6 @@ struct InstructionText: View {
                 .multilineTextAlignment(.center)
                 .lineSpacing(4.0)
                 .font(.footnote)
-                .padding(.bottom)
                 .foregroundColor(Color("TextColor"))
         }
     }

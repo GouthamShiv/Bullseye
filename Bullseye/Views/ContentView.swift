@@ -18,10 +18,10 @@ struct ContentView: View {
             BackgroundView(game: $game)
             VStack {
                 InstructionsView(game: $game)
-                SliderView(sliderValue: $sliderValue)
-                .padding()
+                    .padding(.bottom, 100)
                 ButtonView(isAlertVisible: $isAlertVisible, game: $game, sliderValue: $sliderValue)
             }
+            SliderView(sliderValue: $sliderValue)
         }
     }
 }
@@ -46,6 +46,7 @@ struct SliderView: View {
     var body: some View {
         HStack {
             SliderLabelView(value: "1")
+                .padding(.leading, 2)
             Slider(value: $sliderValue, in: 1.0...100.0)
             SliderLabelView(value: "100")
         }
