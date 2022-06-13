@@ -15,7 +15,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color("BackgroundColor").edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            BackgroundView(game: $game)
             VStack {
                 InstructionsView(game: $game)
                 SliderView(sliderValue: $sliderValue)
@@ -55,6 +55,7 @@ struct SliderView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .previewInterfaceOrientation(.portrait)
             
         ContentView()
             .previewLayout(.fixed(width: 568, height: 320))

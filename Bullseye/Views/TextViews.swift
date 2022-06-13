@@ -47,6 +47,31 @@ struct SliderLabelView: View {
         Text(value)
             .bold()
             .foregroundColor(Color("TextColor"))
+            .frame(width: 35.0)
+    }
+}
+
+struct NumberView: View {
+    var title: String
+    var text: String
+    
+    var body: some View {
+        VStack(spacing: 5) {
+            TextView(text: title.uppercased())
+            RoundedRectTextView(text: text)
+        }
+    }
+}
+
+struct TextView: View {
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .bold()
+            .foregroundColor(Color("TextColor"))
+            .kerning(1.5)
+            .font(.caption)
     }
 }
 
@@ -55,6 +80,8 @@ struct TextViews_Previews: PreviewProvider {
         VStack {
             InstructionText(text: "Instructions")
             BigNumberText(text: "999")
+            NumberView(title: "Name", text: "Jack")
+            TextView(text: "Score")
         }
     }
 }
