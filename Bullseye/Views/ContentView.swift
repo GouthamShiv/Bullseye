@@ -21,12 +21,15 @@ struct ContentView: View {
                     .padding(.bottom, isAlertVisible ? 0 : 100)
                 if isAlertVisible {
                     PointsView(game: $game, sliderValue: $sliderValue, isAlertVisible: $isAlertVisible)
+                        .transition(.scale)
                 } else {
                     ButtonView(isAlertVisible: $isAlertVisible)
+                        .transition(.scale)
                 }
             }
             if !isAlertVisible {
                 SliderView(sliderValue: $sliderValue)
+                    .transition(.scale)
             }
         }
     }
