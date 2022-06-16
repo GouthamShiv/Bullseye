@@ -9,12 +9,10 @@ import SwiftUI
 
 struct InstructionText: View {
     var text: String
+    var iconText: String
     var body: some View {
         VStack {
-            Text("🎯🎯🎯")
-                .font(.largeTitle)
-                .fontWeight(.black)
-            
+            EmojiView(iconText: iconText)
             Text(text.uppercased())
                 .bold()
                 .kerning(2)
@@ -73,13 +71,54 @@ struct TextView: View {
     }
 }
 
+struct BodyText: View {
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .font(.subheadline)
+            .fontWeight(.semibold)
+            .multilineTextAlignment(.center)
+            .lineSpacing(12.0)
+    }
+}
+
+struct ButtonText: View {
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .bold()
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(
+                Color.accentColor
+            )
+            .foregroundColor(Color.white)
+            .cornerRadius(12)
+    }
+}
+
+struct EmojiView: View {
+    var iconText: String
+    
+    var body: some View {
+        Text(iconText)
+            .font(.largeTitle)
+            .fontWeight(.black)
+    }
+}
+
 struct TextViews_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            InstructionText(text: "Instructions")
+            InstructionText(text: "The Slider's value is", iconText: "")
             BigNumberText(text: "999")
-            NumberView(title: "Name", text: "Jack")
-            TextView(text: "Score")
+//            NumberView(title: "Name", text: "Jack")
+//            TextView(text: "Score")
+            BodyText(text: "You scored 200 Points\n🎉🎉🎉")
+            ButtonText(text: "Start New Round")
         }
+        .padding()
     }
 }
