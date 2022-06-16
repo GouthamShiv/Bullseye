@@ -32,12 +32,12 @@ struct TopView: View {
             }) {
                 RoundedImageViewStroked(systemName: "arrow.counterclockwise")
             }
-            .padding(.top, 5)
-            .padding(.leading, 5)
+            .padding(.top, Constants.General.controlButtonSpacing)
+            .padding(.leading, Constants.General.controlButtonSpacing)
             Spacer()
             RoundedImageViewFilled(systemName: "list.dash")
-            .padding(.top, 5)
-            .padding(.trailing, 5)
+            .padding(.top, Constants.General.controlButtonSpacing)
+            .padding(.trailing, Constants.General.controlButtonSpacing)
         }
     }
 }
@@ -48,12 +48,12 @@ struct BottomView: View {
     var body: some View {
         HStack {
             NumberView(title: "Score", text: String(game.score))
-                .padding(.bottom, 5)
-                .padding(.leading, 5)
+                .padding(.bottom, Constants.General.controlButtonSpacing)
+                .padding(.leading, Constants.General.controlButtonSpacing)
             Spacer()
             NumberView(title: "Round", text: String(game.round))
-                .padding(.bottom, 5)
-                .padding(.trailing, 5)
+                .padding(.bottom, Constants.General.controlButtonSpacing)
+                .padding(.trailing, Constants.General.controlButtonSpacing)
         }
     }
 }
